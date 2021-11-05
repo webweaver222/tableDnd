@@ -1,0 +1,52 @@
+.app
+    height: 100%
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    header
+        display: flex
+        background-color: coral
+        padding: 8px
+        .left
+            display: flex
+            flex-direction: column
+            h1
+                font-size: 18px
+                font-weight: bold
+                letter-spacing: 1px
+                margin-bottom: 6px
+            span
+                font-style: italic
+        .menu
+            margin-left: auto
+    .main
+        flex: 1
+        display: flex
+        .map-wrapper
+            padding: 5px
+            width: 60%
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 1px solid black
+            height: 100%
+        .left
+            display: flex
+            flex-direction: column
+            width: 40%
+            .input
+                margin-top: 20px
+                label   
+                    margin: 0 7px 0 0
+                input
+                    border-radius: 20px
+                    border: 1px solid coral
+                    padding: 8px
+                    margin-right: 6px
+                    &:focus
+                        outline: none
+                .notif
+                    color: red
+                    animation: pulse 2s infinite
+            
+        
