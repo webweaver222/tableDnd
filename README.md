@@ -1,14 +1,14 @@
 # Task :
 
-https://f.bryce.ru/f/ff31679eb90c4e569896/
+https://www.figma.com/file/pKMKCcX6qxKLl9DsHXQkQ1/Test?node-id=1%3A1925
 
-company : Bryce
+company :
 
 # Install
 
-git clone https://github.com/webweaver222/bryceTask.git
+git clone https://github.com/webweaver222/tableDnd.git
 
-cd ./bryceTask
+cd ./tableDnd
 
 npm i
 

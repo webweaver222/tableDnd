@@ -1,5 +1,14 @@
 const initialState = {
   tableData: [],
+  cols: {
+    number: "מספר ת.ז",
+    name: "שם עובד",
+    hours_h: "שעות חריגות",
+    hours_ya: "שעות ידינות",
+    hours: "שעות",
+    hours_overall: "סך הכל שעות",
+    //misc: "אפשרויות",
+  },
 };
 
 const reducer = (state, action) => {

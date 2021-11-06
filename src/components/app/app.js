@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./app.sass";
 
 import { connect } from "react-redux";
 import json from "mockData.json";
@@ -8,11 +7,11 @@ import Table from "../Table";
 
 const App = ({ onInit }) => {
   useEffect(() => {
-    onInit(json.products);
+    onInit(json.rows);
   }, []);
 
   return (
-    <div className="test">
+    <div className="app">
       <Table />
     </div>
   );

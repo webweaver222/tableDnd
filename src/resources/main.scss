@@ -1,0 +1,121 @@
+html,
+body {
+  height: 100%;
+  --grey: #f6f6f6;
+  --green: #27d96e;
+  --yellow: #f1a953;
+  --dark-grey: rgb(69, 69, 82);
+}
+#root {
+  height: 100%;
+}
+
+@font-face {
+  font-family: "rubik";
+  src: url("./fonts/Rubik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.app {
+  display: flex;
+
+  .TableWrapper {
+    width: 1440px;
+    display: flex;
+    margin: auto;
+
+    table {
+      width: 100%;
+      padding: 14px 12px;
+
+      th {
+        padding: 15px 0;
+        cursor: grab;
+        font-family: "rubik";
+        font-size: 12px;
+      }
+
+      th.misc {
+        cursor: initial;
+      }
+
+      tbody {
+        background-color: var(--grey);
+        font-size: 14px;
+
+        tr.green {
+          td.name {
+            &::after {
+              background-color: var(--green);
+            }
+          }
+        }
+
+        tr {
+          border: 2px solid #fff;
+          cursor: pointer;
+
+          td {
+            text-align: center;
+            padding: 15px 0;
+            border-left: 2px solid #fff;
+            border-right: 2px solid #fff;
+            font-family: "roboto";
+          }
+
+          td.misc {
+            display: flex;
+            justify-content: space-around;
+            border-right: 2px solid #fff;
+            padding: 0;
+
+            tr {
+              width: 100%;
+              border: none;
+              display: flex;
+
+              td {
+                flex: 1;
+                padding: 15px 0;
+                border-left: none;
+              }
+            }
+          }
+
+          td.number,
+          td.name {
+            text-align: right;
+            font-family: "rubik";
+            font-weight: 400;
+            padding-right: 15px;
+          }
+
+          td.name {
+            position: relative;
+            padding-right: 70px;
+
+            &::after {
+              position: absolute;
+              content: "";
+              width: 14px;
+              height: 11px;
+              border-radius: 50%;
+              right: 16px;
+              top: 50%;
+              background-color: var(--yellow);
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

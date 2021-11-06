@@ -2,8 +2,8 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Provider } from "react-redux";
 
-import "./resources/reset.sass";
-import "./resources/main.sass";
+import "./resources/reset.scss";
+import "./resources/main.scss";
 
 import ErrorBoundry from "./components/error-boundry";
 
