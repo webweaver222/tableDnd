@@ -37,7 +37,6 @@ const TableRowContainer = (Wrapped) =>
     }, []);
 
     const dragEnter = useCallback(function (e) {
-      console.log(e);
       if (e.relatedTarget.tagName !== "TD") return;
       const dragEnterIndex = +this.getAttribute("data-index");
       onDragEnter(dragEnterIndex);

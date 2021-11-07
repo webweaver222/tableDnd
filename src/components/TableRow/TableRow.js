@@ -5,14 +5,7 @@ import TableRowContainer from "./Container";
 import graph from "src/resources/svg/graph.svg";
 import menu from "src/resources/svg/menu.svg";
 
-const TableRow = ({
-  row,
-  i_row,
-  cols,
-  draggedRow,
-  overlayedRow,
-  setReference,
-}) => {
+const TableRow = ({ row, i_row, cols, overlayedRow, setReference }) => {
   return (
     <tr
       className={`${row["state"]} ${
