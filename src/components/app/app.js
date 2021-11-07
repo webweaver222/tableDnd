@@ -5,6 +5,8 @@ import json from "mockData.json";
 
 import Table from "../Table";
 
+import { initTable } from "src/actionCreators";
+
 const App = ({ onInit }) => {
   useEffect(() => {
     onInit(json.rows);
@@ -18,11 +20,5 @@ const App = ({ onInit }) => {
 };
 
 export default connect(null, (dispatch) => ({
-  onInit: (data) =>
-    dispatch({
-      type: "INIT_TABLE",
-      payload: {
-        data,
-      },
-    }),
+  onInit: (data) => dispatch(initTable(data)),
 }))(App);

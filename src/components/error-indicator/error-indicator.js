@@ -1,7 +1,6 @@
 import React from "react";
 
 import img from "./sadFace.png";
-import "./error-indicator.sass";
 
 const ErrorIndicator = ({ message = null, type }) => {
   const errorType =

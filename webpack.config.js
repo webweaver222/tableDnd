@@ -18,8 +18,9 @@ module.exports = (env = {}) => {
   const getPlugins = () => {
     const plugins = [
       new HtmlWebpackPlugin({
-        title: "BryceTask",
+        title: "TableTest",
         template: "public/index.html",
+        favicon: "./src/resources/icon.jpg",
       }),
     ];
 
@@ -52,7 +53,7 @@ module.exports = (env = {}) => {
         },
         //loading images
         {
-          test: /\.(svg|png|jpg|gif|ico|jpeg})$/,
+          test: /\.(svg|png|jpg|jpeg})$/,
           use: [
             {
               loader: "file-loader",
@@ -65,7 +66,7 @@ module.exports = (env = {}) => {
         },
         // loading fonts
         {
-          test: /\.(ttf|otf|eof|woff|woff2)$/,
+          test: /\.(ttf)$/,
           use: [
             {
               loader: "file-loader",
@@ -92,8 +93,6 @@ module.exports = (env = {}) => {
     plugins: getPlugins(),
 
     devServer: {
-      //host: '0.0.0.0',
-      //disableHostCheck: true,
       open: true,
       port: 8000,
       historyApiFallback: true,

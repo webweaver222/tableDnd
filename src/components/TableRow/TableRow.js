@@ -1,26 +1,25 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React from "react";
+
+import TableRowContainer from "./Container";
 
 import graph from "src/resources/svg/graph.svg";
 import menu from "src/resources/svg/menu.svg";
 
-const TableRow = ({ row, i_row, cols }) => {
-  //console.log(row);
-
-  let tableRow;
-
-  useEffect(() => {
-    tableRow.addEventListener("dragstart", (e) => console.log(e));
-    tableRow.addEventListener("dragenter", (e) => console.log(e));
-  }, []);
-
+const TableRow = ({
+  row,
+  i_row,
+  cols,
+  draggedRow,
+  overlayedRow,
+  setReference,
+}) => {
   return (
     <tr
-      className={row["state"]}
+      className={`${row["state"]} ${
+        overlayedRow === row.id ? "overlayed" : ""
+      } `}
       draggable
-      ref={(node) => {
-        if (node) tableRow = node;
-      }}
+      ref={setReference}
     >
       <td className="misc">
         <table>
@@ -48,11 +47,4 @@ const TableRow = ({ row, i_row, cols }) => {
   );
 };
 
-const mapStateToProps = ({ cols }) => ({
-  cols,
-});
-const mapDispatchToProps = (dispatch) => ({
-  // fnBlaBla: () => dispatch(action.name()),
-});
-
-export default connect(mapStateToProps, null)(TableRow);
+export default TableRowContainer(TableRow);

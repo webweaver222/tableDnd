@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   --grey: #f6f6f6;
+  --greish: #e0d9d9;
   --green: #27d96e;
   --yellow: #f1a953;
   --dark-grey: rgb(69, 69, 82);
@@ -28,6 +29,7 @@ body {
   display: flex;
 
   .TableWrapper {
+    padding-top: 30px;
     width: 1440px;
     display: flex;
     margin: auto;
@@ -41,6 +43,24 @@ body {
         cursor: grab;
         font-family: "rubik";
         font-size: 12px;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 2px;
+          transition: all 0.3s ease;
+          background-color: #fff;
+        }
+      }
+
+      th.overlayed {
+        &:after {
+          background-color: black;
+        }
       }
 
       th.misc {
@@ -59,9 +79,15 @@ body {
           }
         }
 
+        tr.overlayed,
+        tr.overlayed td.misc tr {
+          background-color: var(--greish);
+        }
+
         tr {
           border: 2px solid #fff;
           cursor: pointer;
+          transition: all 0.3s ease;
 
           td {
             text-align: center;
@@ -116,6 +142,19 @@ body {
           }
         }
       }
+    }
+  }
+
+  .error-indicator {
+    text-align: center;
+    .alert {
+      border-radius: 25px;
+      width: 30%;
+      margin: auto;
+    }
+    img {
+      height: 100px;
+      margin: 5px 0;
     }
   }
 }
